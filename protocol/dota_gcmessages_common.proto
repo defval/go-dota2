@@ -6,6 +6,7 @@ import "steammessages.proto";
 import "gcsdk_gcmessages.proto";
 import "dota_shared_enums.proto";
 
+option go_package = "./";
 option optimize_for = SPEED;
 option cc_generic_services = false;
 option (additional_includes) = "game/shared/econ/econ_item_constants.h";
@@ -379,6 +380,8 @@ message CMsgDOTAProfileCard {
 	}
 
 	enum EStatID {
+		k_eStat_SoloRank = 1;
+		k_eStat_PartyRank = 2;
 		k_eStat_Wins = 3;
 		k_eStat_Commends = 4;
 		k_eStat_GamesPlayed = 5;

@@ -5,9 +5,10 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/faceit/go-steam"
-	"github.com/faceit/go-steam/protocol/gamecoordinator"
-	"github.com/golang/protobuf/proto"
+	"github.com/Philipp15b/go-steam/v3"
+	"github.com/Philipp15b/go-steam/v3/protocol/gamecoordinator"
+	"google.golang.org/protobuf/proto"
+
 	"github.com/sirupsen/logrus"
 
 	devents "github.com/paralin/go-dota2/events"

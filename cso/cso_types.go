@@ -1,12 +1,10 @@
 package cso
 
 import (
-	"github.com/golang/protobuf/proto"
-	bgcm "github.com/paralin/go-dota2/protocol"
-	gcclm "github.com/paralin/go-dota2/protocol"
-	gccm "github.com/paralin/go-dota2/protocol"
-	gcmm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
+	"google.golang.org/protobuf/proto"
+
+	gccm "github.com/paralin/go-dota2/protocol"
 )
 
 // CSOType is a shared object type identifier.
@@ -53,22 +51,22 @@ const (
 // csoTypeCtors links type IDs to constructors.
 var csoTypeCtors = map[CSOType]func() proto.Message{
 	EconItem: func() proto.Message {
-		return &bgcm.CSOEconItem{}
+		return &gccm.CSOEconItem{}
 	},
 	GameAccountClient: func() proto.Message {
 		return &gccm.CSODOTAGameAccountClient{}
 	},
 	Party: func() proto.Message {
-		return &gcmm.CSODOTAParty{}
+		return &gccm.CSODOTAParty{}
 	},
 	Lobby: func() proto.Message {
-		return &gcmm.CSODOTALobby{}
+		return &gccm.CSODOTALobby{}
 	},
 	PartyInvite: func() proto.Message {
-		return &gcmm.CSODOTAPartyInvite{}
+		return &gccm.CSODOTAPartyInvite{}
 	},
 	GameHeroFavorites: func() proto.Message {
-		return &gcclm.CSODOTAGameHeroFavorites{}
+		return &gccm.CSODOTAGameHeroFavorites{}
 	},
 	MapLocationState: func() proto.Message {
 		return &gccm.CSODOTAMapLocationState{}
@@ -77,10 +75,10 @@ var csoTypeCtors = map[CSOType]func() proto.Message{
 		return &gccm.CSODOTAPlayerChallenge{}
 	},
 	LobbyInvite: func() proto.Message {
-		return &gcmm.CSODOTALobbyInvite{}
+		return &gccm.CSODOTALobbyInvite{}
 	},
 	DropRateBonus: func() proto.Message {
-		return &bgcm.CSOEconItemDropRateBonus{}
+		return &gccm.CSOEconItemDropRateBonus{}
 	},
 }
 

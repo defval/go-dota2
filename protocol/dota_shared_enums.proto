@@ -3,6 +3,7 @@ package protocol;
 
 import "valve_extensions.proto";
 
+option go_package = "./";
 option optimize_for = SPEED;
 option cc_generic_services = false;
 option (additional_includes) = "dota_constants.h";

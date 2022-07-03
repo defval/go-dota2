@@ -11,6 +11,7 @@ import "dota_gcmessages_common_match_management.proto";
 import "base_gcmessages.proto";
 import "econ_gcmessages.proto";
 
+option go_package = "./";
 option optimize_for = SPEED;
 option cc_generic_services = false;
 option (additional_includes) = "dota_labyrinth_blessings_types.h";

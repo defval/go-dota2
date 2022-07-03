@@ -3,6 +3,7 @@ package protocol;
 
 import "google/protobuf/descriptor.proto";
 
+option go_package = "./";
 option cc_generic_services = false;
 
 extend .google.protobuf.EnumValueOptions {

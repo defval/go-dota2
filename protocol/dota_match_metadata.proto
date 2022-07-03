@@ -8,6 +8,7 @@ import "dota_gcmessages_common_lobby.proto";
 import "dota_gcmessages_common.proto";
 import "dota_shared_enums.proto";
 
+option go_package = "./";
 option cc_generic_services = false;
 
 message CDOTAMatchMetadataFile {

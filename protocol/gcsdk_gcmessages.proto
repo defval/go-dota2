@@ -3,6 +3,7 @@ package protocol;
 
 import "steammessages.proto";
 
+option go_package = "./";
 option optimize_for = SPEED;
 option cc_generic_services = false;
 
