@@ -10,7 +10,7 @@ import (
 	"google.golang.org/protobuf/proto"
 
 	"github.com/paralin/go-dota2/cso"
-	gcsdkm "github.com/paralin/go-dota2/protocol"
+	gcsdkm "github.com/paralin/go-dota2/pbgen"
 )
 
 // SOCacheContainer contains a type of object in the cache.

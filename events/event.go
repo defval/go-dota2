@@ -3,7 +3,7 @@ package events
 import (
 	"google.golang.org/protobuf/proto"
 
-	protocol "github.com/paralin/go-dota2/protocol"
+	protocol "github.com/paralin/go-dota2/pbgen"
 )
 
 // Event is a DOTA event.

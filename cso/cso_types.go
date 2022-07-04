@@ -4,7 +4,7 @@ import (
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/proto"
 
-	gccm "github.com/paralin/go-dota2/protocol"
+	gccm "github.com/paralin/go-dota2/pbgen"
 )
 
 // CSOType is a shared object type identifier.

@@ -9,9 +9,10 @@ import (
 	"strings"
 	"unicode"
 
-	gcm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
 	"github.com/serenize/snaker"
+
+	gcm "github.com/paralin/go-dota2/pbgen"
 )
 
 // GenerateAPI uses protobuf reflection to generate an API client for Dota.
@@ -29,12 +30,12 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 	var requestFuncs []*generatedRequestFunc
 
 	eventsImports := make(map[string]struct{})
-	eventsImports["github.com/paralin/go-dota2/protocol"] = struct{}{}
+	eventsImports["github.com/paralin/go-dota2/pbgen"] = struct{}{}
 	eventsImports["github.com/golang/protobuf/proto"] = struct{}{}
 
 	clientImports := make(map[string]struct{})
 	clientImports["context"] = struct{}{}
-	clientImports["github.com/paralin/go-dota2/protocol"] = struct{}{}
+	clientImports["github.com/paralin/go-dota2/pbgen"] = struct{}{}
 	clientImports["github.com/faceit/go-steam/steamid"] = struct{}{}
 	clientImports["github.com/paralin/go-dota2/events"] = struct{}{}
 
@@ -235,11 +236,11 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 				return err
 			}
 			fmt.Fprintf(clientOutput, "{}\n\n\treturn resp, d.MakeRequest(\n")
-			fmt.Fprintf(clientOutput, "\t\tctx,\n\t\tuint32(protocol.EDOTAGCMsg_%s),\n", f.reqMsgID.String())
-			fmt.Fprintf(clientOutput, "\t\treq,\n\t\tuint32(protocol.EDOTAGCMsg_%s),\n", f.respMsgID.String())
+			fmt.Fprintf(clientOutput, "\t\tctx,\n\t\tuint32(pbgen.EDOTAGCMsg_%s),\n", f.reqMsgID.String())
+			fmt.Fprintf(clientOutput, "\t\treq,\n\t\tuint32(pbgen.EDOTAGCMsg_%s),\n", f.respMsgID.String())
 			fmt.Fprintf(clientOutput, "\t\tresp,\n\t)\n")
 		} else {
-			fmt.Fprintf(clientOutput, "\td.write(uint32(protocol.EDOTAGCMsg_%s), req)\n", f.reqMsgID.String())
+			fmt.Fprintf(clientOutput, "\td.write(uint32(pbgen.EDOTAGCMsg_%s), req)\n", f.reqMsgID.String())
 		}
 
 		fmt.Fprintf(clientOutput, "}\n")
@@ -269,8 +270,8 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 		fmt.Fprintf(eventsOutput, "\n}\n")
 
 		fmt.Fprintf(eventsOutput, "\n// GetDotaEventMsgID returns the dota message ID of the event.\n")
-		fmt.Fprintf(eventsOutput, "func (e *%s) GetDotaEventMsgID() protocol.EDOTAGCMsg {\n", eventHandler.eventName)
-		fmt.Fprintf(eventsOutput, "\treturn protocol.EDOTAGCMsg_%s\n", eventHandler.msgID.String())
+		fmt.Fprintf(eventsOutput, "func (e *%s) GetDotaEventMsgID() pbgen.EDOTAGCMsg {\n", eventHandler.eventName)
+		fmt.Fprintf(eventsOutput, "\treturn pbgen.EDOTAGCMsg_%s\n", eventHandler.msgID.String())
 		fmt.Fprintf(eventsOutput, "}\n")
 
 		fmt.Fprintf(eventsOutput, "\n// GetEventBody returns the event body.\n")
@@ -285,7 +286,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 
 		fmt.Fprintf(
 			clientOutput,
-			"\td.handlers[uint32(protocol.EDOTAGCMsg_%s)] = d.getEventEmitter(func() events.Event {\n",
+			"\td.handlers[uint32(pbgen.EDOTAGCMsg_%s)] = d.getEventEmitter(func() events.Event {\n",
 			eventHandler.msgID.String(),
 		)
 		fmt.Fprintf(clientOutput, "\t\treturn &events.%s{}\n\t})\n", eventHandler.eventName)

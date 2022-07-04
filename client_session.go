@@ -6,8 +6,8 @@ import (
 	"github.com/Philipp15b/go-steam/v3/protocol/gamecoordinator"
 
 	devents "github.com/paralin/go-dota2/events"
-	gcsdkm "github.com/paralin/go-dota2/protocol"
-	gcsm "github.com/paralin/go-dota2/protocol"
+	gcsdkm "github.com/paralin/go-dota2/pbgen"
+	gcsm "github.com/paralin/go-dota2/pbgen"
 	"github.com/paralin/go-dota2/state"
 )
 

@@ -6,7 +6,7 @@ import (
 	"github.com/Philipp15b/go-steam/v3/steamid"
 
 	"github.com/paralin/go-dota2/events"
-	protocol "github.com/paralin/go-dota2/protocol"
+	protocol "github.com/paralin/go-dota2/pbgen"
 )
 
 // AbandonLobby abandons a lobby.

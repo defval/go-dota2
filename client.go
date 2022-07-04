@@ -12,10 +12,10 @@ import (
 	"github.com/sirupsen/logrus"
 
 	devents "github.com/paralin/go-dota2/events"
-	bgcm "github.com/paralin/go-dota2/protocol"
-	gcm "github.com/paralin/go-dota2/protocol"
-	gcsdkm "github.com/paralin/go-dota2/protocol"
-	gcsm "github.com/paralin/go-dota2/protocol"
+	bgcm "github.com/paralin/go-dota2/pbgen"
+	gcm "github.com/paralin/go-dota2/pbgen"
+	gcsdkm "github.com/paralin/go-dota2/pbgen"
+	gcsm "github.com/paralin/go-dota2/pbgen"
 	"github.com/paralin/go-dota2/socache"
 	"github.com/paralin/go-dota2/state"
 )

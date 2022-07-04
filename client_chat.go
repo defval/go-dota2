@@ -1,8 +1,8 @@
 package dota2
 
 import (
-	gcmcc "github.com/paralin/go-dota2/protocol"
-	gcm "github.com/paralin/go-dota2/protocol"
+	gcm "github.com/paralin/go-dota2/pbgen"
+	gcmcc "github.com/paralin/go-dota2/pbgen"
 )
 
 // SendChannelMessage attempts to send a message in a channel, text-only.

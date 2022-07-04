@@ -5,7 +5,7 @@ import (
 
 	"github.com/fatih/camelcase"
 
-	protocol "github.com/paralin/go-dota2/protocol"
+	protocol "github.com/paralin/go-dota2/pbgen"
 )
 
 // MsgSender is the sender type of a message.

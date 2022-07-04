@@ -5,8 +5,9 @@ import (
 	"reflect"
 	"strings"
 
-	gcm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
+
+	gcm "github.com/paralin/go-dota2/pbgen"
 )
 
 // GetResponseMessageID returns the response message ID for the request.

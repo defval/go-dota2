@@ -8,7 +8,7 @@
           <option name="location" value="jar://$APPLICATION_PLUGINS_DIR$/protoeditor/lib/protoeditor.jar!/include" />
         </ImportPathEntry>
         <ImportPathEntry>
-          <option name="location" value="file://$PROJECT_DIR$/protocol" />
+          <option name="location" value="file://$PROJECT_DIR$/protos" />
         </ImportPathEntry>
       </list>
     </option>
