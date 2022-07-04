@@ -70,7 +70,7 @@ func (d *Dota2) handleClientWelcome(packet *gamecoordinator.GCPacket) error {
 
 	for _, cache := range welcome.GetOutofdateSubscribedCaches() {
 		if err := d.cache.HandleSubscribed(cache); err != nil {
-			d.le.WithError(err).Warn("unable to handle welcome cache")
+			d.le.Warnf("unable to handle welcome cache. err=%v", err)
 		}
 	}
 
@@ -106,9 +106,7 @@ func (d *Dota2) setConnectionStatus(
 		}
 
 		oldState := ns.ConnectionStatus
-		d.le.WithField("old", oldState.String()).
-			WithField("new", connStatus.String()).
-			Debug("connection status changed")
+		d.le.Debugf("connection status changed. old=%v, new=%v", oldState, connStatus)
 		d.emit(&devents.GCConnectionStatusChanged{
 			OldState: oldState,
 			NewState: connStatus,

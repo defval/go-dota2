@@ -22,7 +22,7 @@ func (d *Dota2) handleCacheSubscribed(packet *gamecoordinator.GCPacket) error {
 	}
 
 	if err := d.cache.HandleSubscribed(sub); err != nil {
-		d.le.WithError(err).Debug("unhandled cache issue (ignore)")
+		d.le.Warnf("unhandled cache issue. err=%v", err)
 	}
 
 	return nil
@@ -36,7 +36,7 @@ func (d *Dota2) handleCacheUnsubscribed(packet *gamecoordinator.GCPacket) error 
 	}
 
 	if err := d.cache.HandleUnsubscribed(sub); err != nil {
-		d.le.WithError(err).Debug("unhandled cache issue (ignore)")
+		d.le.Warnf("unhandled cache issue. err=%v", err)
 	}
 
 	return nil
@@ -50,7 +50,8 @@ func (d *Dota2) handleCacheUpdateMultiple(packet *gamecoordinator.GCPacket) erro
 	}
 
 	if err := d.cache.HandleUpdateMultiple(sub); err != nil {
-		d.le.WithError(err).Debug("unhandled cache issue (ignore)")
+		d.le.Warnf("unhandled cache issue. err=%v", err)
+
 	}
 
 	return nil
@@ -64,7 +65,8 @@ func (d *Dota2) handleCacheDestroy(packet *gamecoordinator.GCPacket) error {
 	}
 
 	if err := d.cache.HandleDestroy(sub); err != nil {
-		d.le.WithError(err).Debug("unhandled cache issue (ignore)")
+		d.le.Warnf("unhandled cache issue. err=%v", err)
+
 	}
 
 	return nil

@@ -35,9 +35,9 @@ func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPractic
 		lobbyObj := cacheCtr.GetOne()
 		if lobbyObj != nil {
 			lob := lobbyObj.(*gcmm.CSODOTALobby)
-			le := d.le.WithField("lobby-id", lob.GetLobbyId())
+			le := d.le
 			if wasInNoLobby {
-				le.Debug("successfully created lobby")
+				le.Debug("successfully created lobby. lobbyID=%d", lob.GetLobbyId())
 				return nil
 			}
 
@@ -47,7 +47,7 @@ func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPractic
 				if err != nil {
 					return err
 				}
-				le.WithField("result", resp.GetResult().String()).Debug("destroy lobby result")
+				le.Debugf("destroy lobby result. result=%v", resp.GetResult().String())
 			}
 			if lob.GetState() != gcmm.CSODOTALobby_UI {
 				d.AbandonLobby()

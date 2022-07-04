@@ -146,7 +146,7 @@ func (d *Dota2) accessState(cb func(nextState *state.Dota2State) (bool, error)) 
 func (d *Dota2) unmarshalBody(packet *gamecoordinator.GCPacket, msg proto.Message) (parseErr error) {
 	defer func() {
 		if parseErr != nil {
-			d.le.WithError(parseErr).WithField("msgtype", packet.MsgType).Warn("unable to parse message")
+			d.le.Warnf("unable to parse message. msgtype=%d, err=%v", packet.MsgType, parseErr)
 		}
 	}()
 
@@ -159,18 +159,18 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 		return
 	}
 
-	le := d.le.WithField("msgtype", packet.MsgType)
+	le := d.le
 	handler, ok := d.handlers[packet.MsgType]
 	if ok && handler != nil {
 		if err := handler(packet); err != nil {
-			le.WithError(err).Warn("error handling gc msg")
+			le.Warnf("error handling gc msg. err=%v", err)
 			ok = false
 		}
 	}
 
 	respHandled := d.handleResponsePacket(packet)
 	if !ok && !respHandled {
-		le.Debug("unhandled gc packet")
+		le.Debugf("unhandled gc packet. msgtype=%v", packet.MsgType)
 		d.emit(&devents.UnhandledGCPacket{
 			Packet: packet,
 		})
