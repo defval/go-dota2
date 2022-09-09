@@ -12,7 +12,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/serenize/snaker"
 
-	gcm "github.com/paralin/go-dota2/pbgen"
+	gcm "github.com/defval/go-dota2/pbgen"
 )
 
 // GenerateAPI uses protobuf reflection to generate an API client for Dota.
@@ -30,14 +30,14 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 	var requestFuncs []*generatedRequestFunc
 
 	eventsImports := make(map[string]struct{})
-	eventsImports["github.com/paralin/go-dota2/pbgen"] = struct{}{}
+	eventsImports["github.com/defval/go-dota2/pbgen"] = struct{}{}
 	eventsImports["github.com/golang/protobuf/proto"] = struct{}{}
 
 	clientImports := make(map[string]struct{})
 	clientImports["context"] = struct{}{}
-	clientImports["github.com/paralin/go-dota2/pbgen"] = struct{}{}
+	clientImports["github.com/defval/go-dota2/pbgen"] = struct{}{}
 	clientImports["github.com/faceit/go-steam/steamid"] = struct{}{}
-	clientImports["github.com/paralin/go-dota2/events"] = struct{}{}
+	clientImports["github.com/defval/go-dota2/events"] = struct{}{}
 
 	// responseMsgs are messages that are known to be responses.
 	responseMsgs := make(map[gcm.EDOTAGCMsg]struct{})

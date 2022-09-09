@@ -1,4 +1,4 @@
-module github.com/paralin/go-dota2
+module github.com/defval/go-dota2
 
 go 1.17
 
@@ -7,6 +7,7 @@ go 1.17
 
 require (
 	github.com/Philipp15b/go-steam/v3 v3.0.0
+	github.com/defval/go-steam/v3 v3.0.0-20220909232631-ef9c66fcf9a4
 	github.com/fatih/camelcase v1.0.0
 	github.com/golang/protobuf v1.5.0
 	github.com/pkg/errors v0.8.1

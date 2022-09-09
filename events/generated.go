@@ -3,7 +3,7 @@ package events
 import (
 	"google.golang.org/protobuf/proto"
 
-	protocol "github.com/paralin/go-dota2/pbgen"
+	protocol "github.com/defval/go-dota2/pbgen"
 )
 
 // AccountGuildEventDataUpdated event.

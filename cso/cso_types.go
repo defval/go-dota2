@@ -4,10 +4,11 @@ import (
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/proto"
 
-	gccm "github.com/paralin/go-dota2/pbgen"
+	gccm "github.com/defval/go-dota2/pbgen"
 )
 
 // CSOType is a shared object type identifier.
+//
 //go:generate stringer -type=CSOType
 type CSOType int32
 

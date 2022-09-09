@@ -5,19 +5,19 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/Philipp15b/go-steam/v3"
-	"github.com/Philipp15b/go-steam/v3/protocol/gamecoordinator"
+	"github.com/defval/go-steam/v3"
+	"github.com/defval/go-steam/v3/protocol/gamecoordinator"
 	"google.golang.org/protobuf/proto"
 
 	"github.com/sirupsen/logrus"
 
-	devents "github.com/paralin/go-dota2/events"
-	bgcm "github.com/paralin/go-dota2/pbgen"
-	gcm "github.com/paralin/go-dota2/pbgen"
-	gcsdkm "github.com/paralin/go-dota2/pbgen"
-	gcsm "github.com/paralin/go-dota2/pbgen"
-	"github.com/paralin/go-dota2/socache"
-	"github.com/paralin/go-dota2/state"
+	devents "github.com/defval/go-dota2/events"
+	bgcm "github.com/defval/go-dota2/pbgen"
+	gcm "github.com/defval/go-dota2/pbgen"
+	gcsdkm "github.com/defval/go-dota2/pbgen"
+	gcsm "github.com/defval/go-dota2/pbgen"
+	"github.com/defval/go-dota2/socache"
+	"github.com/defval/go-dota2/state"
 )
 
 // AppID is the ID for dota2

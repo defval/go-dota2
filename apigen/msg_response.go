@@ -7,7 +7,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	gcm "github.com/paralin/go-dota2/pbgen"
+	gcm "github.com/defval/go-dota2/pbgen"
 )
 
 // GetResponseMessageID returns the response message ID for the request.

@@ -3,7 +3,7 @@ package events
 import (
 	"google.golang.org/protobuf/proto"
 
-	bgcm "github.com/paralin/go-dota2/pbgen"
+	bgcm "github.com/defval/go-dota2/pbgen"
 )
 
 // InvitationCreated confirms that an invitation has been created.

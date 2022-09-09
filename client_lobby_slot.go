@@ -1,8 +1,8 @@
 package dota2
 
 import (
-	gcccm "github.com/paralin/go-dota2/pbgen"
-	gcm "github.com/paralin/go-dota2/pbgen"
+	gcccm "github.com/defval/go-dota2/pbgen"
+	gcm "github.com/defval/go-dota2/pbgen"
 )
 
 // JoinLobbyTeam switches team in a lobby.

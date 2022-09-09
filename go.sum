@@ -3,6 +3,8 @@ github.com/Philipp15b/go-steam/v3 v3.0.0 h1:Cy1LZSGL1l1U5a/Wov4QcOS58aJL8TeaNuCe
 github.com/Philipp15b/go-steam/v3 v3.0.0/go.mod h1:9FNykVskm1LOrksyK4/zl+FgDn95dZyLdZHAs2pFdR0=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/defval/go-steam/v3 v3.0.0-20220909232631-ef9c66fcf9a4 h1:F7bYASmq/elb4p/zt5+oe+n7WuS4mKHuP/hQnctO790=
+github.com/defval/go-steam/v3 v3.0.0-20220909232631-ef9c66fcf9a4/go.mod h1:c6rrB9ArXQofMp0TXjfLwGe7p8Ghi3aDIMvWTrq7520=
 github.com/fatih/camelcase v1.0.0 h1:hxNvNX/xYBp0ovncs8WyWZrOrpBNub/JfaMvbURyft8=
 github.com/fatih/camelcase v1.0.0/go.mod h1:yN2Sb0lFhZJUdVvtELVWefmrXpuZESvPmqwoZc+/fpc=
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=

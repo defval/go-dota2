@@ -8,7 +8,7 @@ import (
 	"github.com/fatih/camelcase"
 	"github.com/pkg/errors"
 
-	gcm "github.com/paralin/go-dota2/pbgen"
+	gcm "github.com/defval/go-dota2/pbgen"
 )
 
 // generatedRequestFunc is a auto-generated request.

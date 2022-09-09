@@ -3,8 +3,8 @@ package main
 import (
 	"strings"
 
+	dota_gcmessages_msgid "github.com/defval/go-dota2/pbgen"
 	"github.com/fatih/camelcase"
-	dota_gcmessages_msgid "github.com/paralin/go-dota2/pbgen"
 )
 
 // GetMessageFuncName determines what function name we should assign a message.
